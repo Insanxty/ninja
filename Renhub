@@ -1,0 +1,49 @@
+local Material = loadstring(game:HttpGet("https://raw.githubusercontent.com/Kinlei/MaterialLua/master/Module.lua%22))()
+
+
+local X = Material.Load({
+    Title = "RenHub",
+    Style = 3, -- 3 different styles
+    SizeX = 500,
+    SizeY = 350,
+    Theme = "Light",
+    ColorOverrides = {
+        MainFrame = Color3.fromRGB(235,235,235)
+    }
+})
+
+local Y = X.New({
+    Title = "Main"
+})
+
+local A = Y.Button({
+    Text = "Main",
+    Callback = function()
+
+
+
+
+    end,
+    Menu = {
+        Information = function(self)
+            X.Banner({
+                Text = "The Main Tab"
+            })
+        end
+    }
+})
+
+function doPrint()
+  while Toggle and wait() do
+   print("#RenHub")
+  end
+end
+
+local B = Y.Toggle({
+    Text = "Print #RenHub",
+    Callback = function(Value)
+      Toggle = Value
+      doPrint()
+    end,
+    Enabled = false
+})
